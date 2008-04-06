@@ -1,0 +1,20 @@
+<div id="div_action_<%= action.id %>">
+<p>
+<b><%= action.name %></b>&nbsp;
+
+<%= link_to_remote(image_tag("checkmark.png", {:border => 0, :alt => _("Accept this action."), :title => _("Accept this action.")}), :url=>url_for(:action=>"set", :id=>action.id, :do=>'accept')) %>&nbsp;
+
+<%= link_to_remote(image_tag("cancel.png", {:border => 0, :alt => _("Dismiss this action."), :title => _("Dismiss this action.")}), 
+                   :url=>url_for(:action=>"set", :id=>action.id, :do=>'reject')) %>&nbsp;
+
+<% if action.saving_type %>
+<img src="<%= resource_icon(action) %>" align="right" hspace="10" alt="<%= saving_text(action) %>" title="<%= saving_text(action) %>"/>
+<% end %>
+</p>
+
+<p>
+<%= action.desc %>
+</p>
+
+</div>
+

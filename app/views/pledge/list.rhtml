@@ -1,0 +1,15 @@
+<h1>Take Action!</h1>
+
+<p><%= _"Each of these simple actions can really make a difference. So start now, pick something simple that you think you can do and do it! You will save some of our natural resources and reduce pollution. Spread the word! There's no small gain if we all participate." %></p>
+
+<p><%= _"Once you pledge for an action, it's added to your profile. You will need to confirm it when it's done. And then everything you helped for will be part of your profile, as a credit for your good deeds." %></p>
+
+<div id="div_action_list">
+  <%= render(:partial => 'action', :collection => @actions) %>
+</div>
+
+<% if @actions.empty? %>
+
+<p><b><%= _"You've been so great! It's a shame, we don't have any other action to propose you. But come back later, we'll probably have new ones. And you can always " + link_to(_("create your own project"), :controller => 'project', :action => 'new') %></b></p>
+
+<% end%>

@@ -1,0 +1,12 @@
+<div id="div_need_<%= @contrib.code %>">
+<p>
+<b><%=_('This Project Needs ') + _(@contrib.desc) %></b><br/>
+<%=_("Please give us more details about what you need exactly and what kind of help you're looking for.") %><br/>
+  <% # Another trick, I've added an InPlaceEdited prototype that comes edited as default.  
+     # This uses it without having to redefine a custom version of in_place_editor_field.  
+     field = in_place_editor_field 'need' , 'desc', {}, { :cols=> 80, :rows => 3,}
+     field = field.sub('InPlaceEditor', 'InPlaceEdited') unless defined?(@static) && @static %>
+
+  <%= field%>
+</p>
+</div>

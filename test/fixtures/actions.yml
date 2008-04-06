@@ -1,0 +1,30 @@
+Light_action:
+  id: 1
+  project_id: 2
+  name: "Energy Efficient Light Bulbs"
+  desc: "On average, a household changing all its lightbulbs for energy efficient ones saves 200kW per year."
+  saving_type: 1
+  unit: 2
+  quantity: 200
+  classifier: 1
+
+toilet_action:
+  id: 2
+  project_id: 3
+  name: "A Brick in Your Toilets"
+  desc: "Reducing the volume of your toilets by half a liter saves about 30L per year."
+  saving_type: 3
+  unit: 1
+  quantity: 30
+  classifier: 2
+
+bike_action:
+  id: 3
+  project_id: 4
+  name: "Bike to Work"
+  desc: "Riding a bike to work saves on average 1000 miles of driving (4 miles round trip), which is about 1.9 tons of pollutants released in the atmosphere."
+  saving_type: 2
+  unit: 3
+  quantity: 1.9
+  classifier: 3
+ 

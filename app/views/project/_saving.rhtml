@@ -1,0 +1,12 @@
+<div id="div_saving_<%= @res.code %>">
+<p>
+<b><%=_('This Project Reduces') + ' ' +  _(@res.name) %></b><br/>
+<%=_("Please tell us shortly how you plan to reduce %s and what are the expected quantities saved.") % _(@res.name) %><br/>
+  <% # Another trick, I've added an InPlaceEdited prototype that comes edited as default.  
+     # This uses it without having to redefine a custom version of in_place_editor_field.  
+     field = in_place_editor_field 'saving' , 'desc', {}, {:cols=> 80, :rows => 3}
+     field = field.sub('InPlaceEditor', 'InPlaceEdited') unless defined?(@static) && @static %>
+
+  <%= field%>
+</p>
+</div>

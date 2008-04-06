@@ -1,0 +1,14 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+matt_user:
+  id: 1
+  login: "matt"
+  password: "1fa2ef4755a9226cb9a0a4840bd89b158ac71391" # matt
+  role: 2
+  e_mail: "matt@matt.com"
+
+basic_user:
+  id: 2
+  login: "user"
+  password: ""
+  role: 1
+  e_mail: "user@user.com"

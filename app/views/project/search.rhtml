@@ -1,0 +1,25 @@
+<h1>Search For Projects</h1>
+
+<p><%=_('Just type your search words in the following field. The default is to search for ALL these words, however you can change this behavior by typing OR between each of them.') %></p>
+
+<% form_tag :action => 'search' do %>
+<input type="text" id="search_query" name="query" size="30" value="<%=@query%>" />
+<%= submit_tag "Search" %>
+<% end %>
+
+<p/><p/>
+
+<% if @pages %>
+
+<h2>Search Results</h2>
+
+<% if @projects.empty? %> <p><%=_("Your search didn't produce any result.") %></p> <% end %>
+
+<% @projects.each do |project| %>
+<p><%= link_to project[:name], :action => 'show', :id => project[:id]%> <br/> <%=project[:short_desc]%></p>
+<% end %>
+
+<!-- link_to _('Previous page'), { :page => @pages.current.previous, :query => @query} if @pages.current.previous -->
+<%= will_paginate(@pages, :params=>{:query => @query}) %>
+<!-- link_to _('Next page'), { :page => @pages.current.next, :query => @query} if @pages.current.next -->
+<% end %>

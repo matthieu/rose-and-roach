@@ -1,0 +1,5 @@
+* Let users do everything (including creating projects) without needing to register profile. They only get a cookie to start with and can add details later on. Careful to not create on GET with that one.
+* Search doesn't need its own page, should be just a textbox.
+* Projects can have a wiki and/or a blog
+* Projects select the type of help they need from a short combo and add some specific comments.
+* Users give what they can contribute from a short combo and add some specific comments.

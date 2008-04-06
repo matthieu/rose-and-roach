@@ -1,0 +1,70 @@
+<div class="floatLeft width70 biggerPaddingLeft">
+
+<p><%= error_messages_for 'project' %>
+<%= error_messages_for 'need' %>
+</p>
+
+<h2>
+  <%= in_place_editor_field 'project' , 'name', {}, { :cols => 80} %> 
+</h2>
+
+<% for need in @project.needs %>
+<p>
+  <% @need, @contrib, @static = need, CONTR_LOOKUP[need.need_type], true %>
+  <%= render :partial => 'need' %>
+</p>
+<% end %>
+<div id="div_needs"></div>
+
+
+<% for saving in @project.savings %>
+<p>
+  <% @saving, @res, @static = saving, RES_LOOKUP[saving.saving_type], true %>
+  <%= render :partial => 'saving' %>
+</p>
+<% end %>
+<div id="div_savings"></div>
+
+<p>
+  <b><%=_('Short Description') %></b><br/>
+  <%= in_place_editor_field 'project' , 'short_desc', {}, { :cols=> 80, :rows => 3 } %>
+</p>
+
+<p>
+  <b><%=_('Description') %></b><br/>
+  <%= in_place_editor_field 'project', 'desc', {}, 
+  { :cols => 80, :rows => 20, 
+  :load_text_url=> url_for(:action=>"get_project_desc" , :id=>@project)} %>
+  </p>
+
+  <p><%= link_to _("Make it a 'Take Action'!"), :action => 'take_action', :id => @project %></p>
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+</div>
+
+<!-- Begin right column -->
+
+  <div class="floatRight width30 lightBlueBg horzPad">
+    <h3><%= _('Which Resource Will You Save?') %></h3>
+    <p><%=_('Tell others what your project will reduce.') %></p>
+    <ul style="list-style-type: none;">
+    <% for res in RESOURCES %>
+      <% checked = false %>
+      <li><%= check_box_tag("res_#{res.code}", "1", checked) + '&nbsp;' + _(res.name) %></li>
+          <%= observe_field("res_#{res.code}", 
+                          :url => url_for(:action=>"set_project_saving" , :code=>res.code, :id=>@project),
+                          :with => "'state=' + encodeURIComponent(value)") %>
+    <% end %>
+    </ul>
+  </div>
+
+  <div class="floatRight width30 lightBlueBg horzPad">
+
+    <h3><%=_('What Does Your Project Need?') %></h3>
+    <p><%=_('Tell others how they can help you.') %></p>
+
+    <%= tree_picker(CONTRIBUTIONS, (@project.needs.map { |m| m.need_type })) %>
+  </div>
+
+<!-- End right column -->

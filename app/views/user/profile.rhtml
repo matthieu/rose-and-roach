@@ -1,0 +1,33 @@
+<div class="floatLeft width75 biggerPaddingLeft">
+  
+<%= error_messages_for 'user', :object_name => 'profile' %>
+
+<p><%= _"This is your personal profile, feel free to update and complement these information" %></p>
+
+<% form_tag :action => 'profile' do %>
+
+<p><label for="user_login"><%=_('Login') %></label>
+<%= text_field 'user', 'login' %></p>
+
+<p><label for="user_password"><%=_('Password') %></label>
+<%= password_field 'user', 'password' %></p>
+
+<p><label for="user_password_confirmation"><%=_('Confirm Password') %></label>
+<%= password_field 'user', 'password_confirmation' %></p>
+
+<p><label for="user_e_mail"><%=_('E-mail') %></label>
+<%= text_field 'user', 'e_mail' %></p>
+
+<p><label for="user_firstname"><%=_('Firstname') %></label>
+<%= text_field 'user', 'firstname' %></p>
+
+<p><label for="user_lastname"><%=_('Lastname') %></label>
+<%= text_field 'user', 'lastname' %></p>
+
+<%= submit_tag "Update" %>
+
+<% end %>
+
+</div>
+
+<%= render :partial => "user_menu" %>

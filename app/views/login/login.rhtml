@@ -1,0 +1,47 @@
+<div id="login_div" <% if @user %>style="display: none;"<% end %>>
+<p>Just type your login (or nickname) and password below to start participating. Sustainable development is right behind, thank you for helping us and everybody else reaching that goal.</p>
+
+<% form_tag :action => 'login' do %>
+<p><label for="user_login"><%=_('Login') %></label><br/><%= text_field 'user', 'login'  %></p>
+
+<p><label for="user_password"><%=_('Password') %></label><br/><%= password_field 'user', 'password'  %></p>
+
+  <%= submit_tag "Login" %>
+<% end %>
+</div>
+
+<!-- TODO password e-mail -->
+<p><%=_('Forgot your password? Just %s to have it automatically e-mailed to you.') % ('<a href="#">' + _('click here') + '</a>') %></p>
+<p><%=_("Not one of ours yet? %s to create your account. It's the best way around to start making a difference ecologically.") % ("<a href=\"#\" onclick=\"new Effect.Appear('registration_div');Effect.BlindUp('login_div')\">" + _('Register') + "</a>") %></p>
+
+<div id="registration_div" <% unless @user %>style="display: none;"<% end %>/>
+
+<p><%=_("Please give us a few information about you. We won't use it anywhere outside of this community or give it to anybody, it's just a way to make you known to us.") %></p>
+
+<%= error_messages_for 'user', :object_name => 'registration' %>
+
+<% form_tag :action => 'register' do %>
+
+<p><label for="user_login"><%=_('Login') %></label>
+<%= text_field 'user', 'login' %></p>
+
+<p><label for="user_password"><%=_('Password') %></label>
+<%= password_field 'user', 'password' %></p>
+
+<p><label for="user_password_confirmation"><%=_('Confirm Password') %></label>
+<%= password_field 'user', 'password_confirmation' %></p>
+
+<p><label for="user_e_mail"><%=_('E-mail') %></label>
+<%= text_field 'user', 'e_mail' %></p>
+
+<p><label for="user_firstname"><%=_('Firstname') %></label>
+<%= text_field 'user', 'firstname' %></p>
+
+<p><label for="user_lastname"><%=_('Lastname') %></label>
+<%= text_field 'user', 'lastname' %></p>
+
+<%= submit_tag "Register" %>
+
+<% end %>
+
+</div>

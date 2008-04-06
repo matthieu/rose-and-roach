@@ -1,0 +1,108 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+htw_project:
+  id: 1
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+light_project:
+  id: 2
+  name: "Energy Efficient Light Bulbs"
+  desc: ""
+  short_desc: "Replace your regular light bulbs with energy efficient ones."
+
+toilet_project:
+  id: 3
+  name: "A Brick in Your Toilets"
+  desc: ""
+  short_desc: "Put a brick or a full bottle of water in the tank of your toilets to reduce the volume of water used when flusing."
+
+bike_project:
+  id: 4
+  name: "Bike to Work"
+  desc: ""
+  short_desc: "Use a bicyle to go to work instead of driving your car if the distance allows it."
+
+htw5_project:
+  id: 5
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+htw6_project:
+  id: 6
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+htw7_project:
+  id: 7
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+htw8_project:
+  id: 8
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+htw9_project:
+  id: 9
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+htw10_project:
+  id: 10
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+htw11_project:
+  id: 11
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+htw12_project:
+  id: 12
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+htw13_project:
+  id: 13
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+htw14_project:
+  id: 14
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+htw15_project:
+  id: 15
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+htw16_project:
+  id: 16
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+htw17_project:
+  id: 17
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."
+
+htw18_project:
+  id: 18
+  name: "Heal The World"
+  desc: "Website to help people heal the world with simple actions and more complex projects."
+  short_desc: "Website to help people heal the world with simple actions and more complex projects."

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+  <title>Rose And Roach</title>
+
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta name="author" content="Les connards idealistes" />
+  <meta name="description" content="Site Description Here" />
+  <meta name="keywords" content="ecology, green, social" />
+  <meta name="robots" content="index, follow, noarchive" />
+  <meta name="googlebot" content="noarchive" />
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/layout.css" media="screen, projection, tv" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/html.css" media="screen, projection, tv" />
+
+  <%= javascript_include_tag :defaults  %>
+
+  <style type="text/css">
+<!--
+.style2 {color: #627E9A}
+.style3 {color: #62CC3C}
+.style6 {color: #5C8096}
+-->
+  </style>
+</head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->  
+  <div id="header" class="width">
+    <div id="header-left">
+    <ul>
+      <%= show_language %>
+    </ul>
+    </div>
+    <div id="header-right">
+    <ul>
+      <li><a href="/"><%=_('Back to Main page')%></a></li>
+      <li><a href="" class="last"><%=_('About Us')%></a></li>
+    </ul>
+    </div>
+  </div>
+  <!-- #header end -->
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+    <ul>
+      <li>
+        <a href="/pledge/list" onfocus="blur()">
+          <span class="title "><%= _('Take Action!') %></span>
+          <span class="desc"><%= _('Simple actions make a difference') %></span>
+        </a>
+      </li>
+      <li>
+        <a href="/project/search" onfocus="blur()">
+          <span class="title "><%= _('Find a Project') %></span>
+          <span class="desc"><%= _('We help you find where to help') %></span>
+        </a>
+      </li>
+      <li>
+        <a href="/project/new" onfocus="blur()">
+          <span class="title "><%= _('Create Your Project') %></span>
+          <span class="desc"><%= _('Got an idea to heal the earth?') %></span>
+        </a>
+      </li>
+      <li style="off">
+      <% link = session[:user_id] ? "/user/home/#{session[:user_id]}" : "/login/login" %>
+        <a href="<%= link %>" onfocus="blur()">
+          <span class="title "><%= _('Your Home') %></span>
+          <span class="desc"><%= _("Where you'll feel warm and cozy") %></span>
+        </a>
+       </li>
+    </ul>
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+    <% unless defined?(@hide_column) && @hide_column %>
+      <!-- Center news column -->
+      <div class="floatLeft width75 biggerPaddingLeft">
+    <% end %>
+
+    <!-- Errors and flash handling -->
+    <div id="errorExplanation"></div>
+    <% if flash[:notice] %><%= flash_notice(flash[:notice]) %><% end %>
+
+    <!-- Main content goes here -->
+    <%= yield:layout %>
+
+    <% unless defined?(@hide_column) && @hide_column %>
+  
+    </div>
+    <!-- Center news column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+
+      <h2>OS <span class="dark">Resources</span></h2>
+
+      <ul class="submenu1">	    
+		<li><a href="http://www.oswd.org">OSWD</a></li>
+		<li><a href="http://www.opensourcetemplates.org">Free Templates</a></li>
+        <li><a href="http://www.studio7designs.com">Studio7designs.com </a></li>
+        <li><a href="http://www.arbutusphotography.com">Photographer Victoria</a></li>        
+        <li><a href="http://www.studio7designs.deviantart.com">DeviantArt</a></li>
+        <li><a href="http://www.csszengarden.com">Css Zen Garden</a></li>
+        <li><a href="http://www.cssremix.com">CSS Remix</a></li>
+      </ul>
+
+    <!--/div>
+    
+    <div class="floatRight width25 lightBlueBg horzPad"-->
+
+      <h3>More CSS <span class="dark">resources</span></h3>
+
+      <ul class="submenu2">
+        <li><a href="http://www.alistapart.com">A list apart</a></li>
+        <li><a href="http://www.famfamfam.com/">FAMFAMFAM Icons </a></li>
+        <li><a href="http://www.html.net/tutorials/css/introduction.asp">CSS Tutorials</a></li>
+        <li><a href="http://www.webwhirlers.com/colors/spinwheel.asp">Color Wheel</a></li>
+       
+      </ul>
+
+      <ul class="submenu1">
+        <li><a href="http://www.cssbeauty.com/">CSS Beauty</a></li>
+        <li><a href="http://www.digg.com/">Digg</a></li>
+        <li><a href="http://www.html.it/articoli/niftycube/index.html">Nifty Corners</a></li>
+        <li><a href="http://www.html-kit.com/favicon/">Create a Favicon! </a></li>
+        <li><a href="http://www.freecsscart.com/">CSS shopping cart</a></li>
+        <li><a href="http://www.cssplay.co.uk/ie/weft.html">CSS Play</a></li>
+        <li><a href="http://www.mozilla.com/firefox/">Firefox</a></li>
+      </ul>
+
+      <h3>Favorite <span class="dark">Links</span></h3>
+
+      <ul class="submenu2">
+        <li><a href="www.bbc.co.uk/">BBC</a></li>
+        <li><a href="http://www.google.com/trends">Google Trends</a></li>
+        <li><a href="http://www.luminous-landscape.com/">Luminous-landscape </a></li>
+        <li><a href="www.studiotwentyeight.net/">Kols themes</a></li>
+		<li><a href="http://www.iconaholic.com/">iconaholic</a></li>
+        <li><a href="http://www.marvilla.us/">Iconica Custom Icons</a></li>
+        <li><a href="http://www.rad-e8.com/">rad-e8</a></li>
+        <li><a href="http://www.freundt.org/florian/index.htm">florian</a></li>
+	  </ul>
+
+    </div>
+    <!-- Right links column end -->
+
+    <% end %>
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+  
+  <!--img src="/images/logo.gif" alt="Your logo goes here"/-->
+  
+    <ul>
+      <li><a href="http://www.studio7designs.com/photography_gallery">Design</a></li>
+      <li><a href="http://www.arbutusphotography.com">Inspired by</a></li>
+      <li><a href="http://www.studio7designs.com" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+
+</body>
+
+</html> 

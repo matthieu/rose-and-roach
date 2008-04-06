@@ -1,0 +1,14 @@
+<%= error_messages_for 'project' %>
+
+<!--[form:project]-->
+<p><b><%=_('Project Title') %></b><br/>
+<%= text_field 'project', 'name', 'size' => '80'  %></p>
+
+<p><b><%=_('Short Description') %></b> (<%=_('200 characters maximum') %>)<br/>
+<%=_('The short description will be displayed on pages listing several projects.') %><br/>
+<%= text_area 'project', 'short_desc', 'cols' => '80', 'rows' => '3'  %></p>
+
+<p><b><%=_('Description') %></b><br/>
+<%= text_area 'project', 'desc', 'cols' => '80', 'rows' => '20'  %></p>
+<!--[eoform:project]-->
+

@@ -1,0 +1,26 @@
+<div class="floatLeft width75 biggerPaddingLeft">
+
+<h1><%= _"Welcome Home #{@user.fullname}!" %></h1>
+</p>
+
+<h3>Stuff To Do</h3>
+
+<% if @pledges.blank? %>
+  <p><%= _("You don't have any pledge to confirm, maybe you could %s have a look %s at the latest ones?") % ["<a href='/pledges/list'>", "</a>"] %></p>
+<% else %>
+  <p><div id="pledge_text" class="normal"><%= _("You have %s %s to confirm.") % [fuzzy_num(@pledges.size), pluralize(@pledges.size,_("pledge"))] %></div></p>
+
+  <ul>
+  <% @pledges.each do |pledge| %>
+  <div id="<%= "confirm_pledge_#{pledge.id}" %>">
+    <li><%= pledge.action.name %>&nbsp;
+    <%= link_to_remote(image_tag("checkmark.png", {:border => 0, :alt => _("Confirm this pledge."), :title => _("Confirm this pledge.")}), :url=>url_for(:action=>"confirm", :id=>pledge.id)) %>&nbsp;</li>
+    </div>
+  <% end %>
+  </ul>
+
+<% end %>
+
+</div>
+
+<%= render :partial => "user_menu" %>
